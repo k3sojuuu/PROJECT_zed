@@ -1,2 +1,3 @@
 # PROJECT_zed
-rrfuref
+
+giai thich ve git
