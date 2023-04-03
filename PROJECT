@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+    <body>
+        <header>
+            <h1>Menu of website</h1>
+            <nav>
+                <a href="#reg">menu 1</a>
+                <a href="#about">menu 2</a>
+                <a href="#teachers">menu 3</a>
+                <a href="#feedback">menu 4</a>
+            </nav>
+        </header>
+        <main>
+            
+        </main>
+    </body>
+</head>
