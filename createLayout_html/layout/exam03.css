@@ -17,7 +17,10 @@ body{
     border: 2px solid #000000;
     background-color: #ffffff;
 }
-
+header{
+    height: 360px;
+    background-color: rebeccapurple;
+}
 h1 {
     text-indent: -9999px;
     width: 940px;
@@ -54,10 +57,6 @@ article{
     overflow: auto;
     width: 100%;
 }
-header{
-    height: 160px;
-    background-image:url("images/header.jpg");     
- }
 hgroup {
     margin-top: 40px;
 }
@@ -107,6 +106,6 @@ aside h2 {
     color:  #de6581;
 }
 footer{
-    font-size: 70%;
+    font-size: 80%;
     padding: 7px 0px 0px 20px;
 }
