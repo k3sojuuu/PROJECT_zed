@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom in JS</title>
+</head>
+<body>
+    <h3>JS getElementBy</h3>
+    <p>Pls rate the service: </p>
+    <p>
+        <label for="">
+            <input type="radio" value="very-poor" name="rate" id="very-poor">Very poor
+        </label>
+        <label for="">
+            <input type="radio" name="rate" id="poor">Poor
+        </label>
+        <label for="">
+            <input type="radio" name="rate" id="very">Very-poor
+        </label>
+        <label for="">
+            <input type="radio" name="rate" id="very-good">Very good
+        </label>
+    </p>
+    <p>
+        <button id="btnRate">Submit</button>
+    </p>
+    <p id="output"></p>
+    <script>
+    let btn = document.getElementById('btnRate');
+    let output = document.getElementById('output');
+    let vrp = document.getElementById('very-poor');
+    let poor = document.getElementById('poor');
+    // if(vrp.check){
+
+    // }else if(poor.checked){
+
+    // }else{
+        
+    // }
+    
+    btn.addEventListener('click',()=>{
+         let rates = document.getElementsByName('rate');
+         rates.forEach(rate =>{
+         if(rate.checked){
+            // innerText dùng để ghi nội dung tới thẻ html
+            output.innerHTML = 'You selected:' +'<br>' + rate.value;
+        }
+      });
+    });
+    </script>
+  </body>
+</html>

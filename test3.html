@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btnButton">Click me</button>
+    <input type="text" name="mesage" id="message">
+    <p id="content"></p>
+    <p id="demo"></p>
+    <script>
+        document.getElementById("btnButton").addEventListener("mouseleave",getData);
+        function functionUserDifine(){
+            document.getElementById("content").innerHTML = Date()
+        }
+
+        let textBox = document.getElementById("message");
+        textBox.addEventListener("keydown",(event) =>{
+            console.log('Key: ' + event.key + 'Code: ' + event.code);
+        })
+    </script>
+</body>
+</html>
