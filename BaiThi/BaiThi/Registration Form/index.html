@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.min.js" integrity="sha512-niUuJjkxAzo4wrTq1hZUHVZ39m6DI4/TljvknrBk2NTEZu8oJDijPF2Ud7RaNtBMz+FWX3Gp/QaD5P5ZeUI/2Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="style1.css">
+  <title>Document</title>
+</head>
+
+<body ng-app="App">
+    <h1>Registration</h1>
+  <div class="container" ng-app="App" ng-controller="myCtrl as main">
+    <a href="" ng-click="show()"></a>
+      
+    
+    
+    <form  class="form" name="userform" novalidate>
+      <div class="form-group has-success has-feedback">
+        <label for="" class="control-label">Username</label>
+        <input type="text" class="form-control" ng-model="new.name" name="name" placeholder="Name" ng-minlength="3"
+          ng-maxlength="20" required ng-required="true">
+        <span class="error" ng-show="userform.name.$error.required"></span>
+        <span class="error" ng-show="userform.name.$error.minlength">Name must have more than 3 charactors</span>
+        <span class="error" ng-show="userform.name.$error.maxlength">Name must'n have more than 20 charactors</span>
+        <span class="glyphicon glyphicon-ok-circle form-control-feedback" ng-show="userform.name.$valid"></span>
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback" ng-show="userform.name.$invalid"></span>
+
+      </div>
+      <div class="form-group has-success has-feedback">
+        <label class="control-label">Password</label>
+        <input type="password" class="form-control" ng-model="new.password" name="password"
+          placeholder="Your password here" required ng-required="true" ng-minlength="8"
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,}$">
+        <span class="error" ng-show="userform.password.$error.required"></span>
+        <span class="error"
+          ng-show="userform.password.$dirty && userform.password.$error.pattern||userform.password.$error.minlength">Invalid
+          password</span>
+        <span class="glyphicon glyphicon-ok-circle form-control-feedback" ng-show="userform.password.$valid"></span>
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback"
+          ng-show="userform.password.$invalid"></span>
+
+      </div>
+      <!--Name-->
+      <!--Email-->
+      <div class="form-group has-success has-feedback">
+        <label class="control-label">Phone</label>
+        <input type="tel" class="form-control" ng-model="new.tel" name="tel" placeholder="0123 456 789" required
+          ng-required="true" ng-minlength="10" ng-maxlength="10" ng-pattern="/^[0-9]{10,10}$/">
+        <span class="error" ng-show="userform.tel.$error.required"></span>
+        <span class="error"
+          ng-show="userform.tel.$error.minlength||userform.tel.$error.maxlength || userform.tel.$error.pattern">Invalid
+          phone number</span>
+        <span class="glyphicon glyphicon-ok-circle form-control-feedback" ng-show="userform.tel.$valid"></span>
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback" ng-show="userform.tel.$invalid"></span>
+      </div>
+      <div class="form-group has-success has-feedback">
+        <label class="control-label">Email</label>
+        <input type="email" class="form-control" ng-model="new.email" name="email" placeholder="Enter email"
+          ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" pattern=".+@globex\.com" required ng-required="true">
+        <span class="error" ng-show="userform.email.$error.required"></span>
+        <span class="error" ng-show="userform.email.$error.pattern&&userform.email.$dirty">Invalid email</span>
+        <span class="glyphicon glyphicon-ok-circle form-control-feedback" ng-show="userform.email.$valid"></span>
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback" ng-show="userform.email.$invalid"></span>
+      </div>
+      <!--phone-->
+      
+      <!--password-->
+      <input type="hidden" ng-model="new.id"><!--id hidden-->
+      <input type="button" value="Submit" ng-click="sign()">
+      <input type="button" value="Cancel" >
+    </form>
+    <table ng-show="s">
+            <thead>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contact in contacts">
+                    <td>{{contact.name}}</td>
+                    <td>{{contact.email}}</td>
+                    <td>{{contact.phone}}</td>
+                </tr>
+            </tbody>
+      </table>
+  </div>
+  <script>
+    var app = angular.module('App', []);
+
+    app.controller('myCtrl', function ($scope) {
+      var uid = 0;
+      $scope.contacts = [
+        {
+          'id':0,
+          'name':'abc',
+          'email':'email@xz.com',
+          'phone':'1111111111',
+          'password':'Datmkqn@1'
+      }
+    ];
+      
+      $scope.sign = function () {
+        if ($scope.new.id == null) 
+        {
+          $scope.new.id = uid++
+          $scope.contacts.push($scope.new)
+        }
+
+          $scope.new={};
+          
+       } 
+       $scope.s=false;
+      $scope.show=function(){
+        $scope.s=true;
+      }
+      });
+  </script>
+</body>
+
+</html>

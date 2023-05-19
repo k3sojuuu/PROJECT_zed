@@ -1,0 +1,24 @@
+body{
+    background: no-repeat;
+    background-color: aliceblue;
+    background-image: linear-gradient(to bottom right, rgb(150, 255, 168), rgb(42, 211, 226));
+
+}
+.div1{
+    border-radius: 5px;
+    width: 400px;
+    height: 100vh;
+    text-align: center;
+    margin: 0 auto;
+  
+}
+.div2{
+    padding: 0px 15px;
+}
+div{
+    padding: 0px 0px 15px 0px;
+}
+.fas{
+    background-color: rgb(198, 195, 195) ;
+    padding: 6px;
+}
